@@ -49,7 +49,7 @@ public class Generator {
                 break;
             sequence.add(i);
             compute(target,curr_sum+i,i);
-          //  sequence.remove(sequence.size()-1);
+            sequence.remove(sequence.size()-1);
         }
 
     }
