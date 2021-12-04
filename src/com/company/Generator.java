@@ -9,7 +9,7 @@ public class Generator {
 
     private final List<Integer> sequence;   // this hold current sequnce for example [1,1,2] means currently 1+1+2 has been added
     private  final HashSet<List<Integer>> sequences_present;   // holds all the unique sequences that add upto the number
-    private final List<String> partitions;                     // if user wants to print the partitions , sequences from previous variable added to
+    private final List<String> partitions;                     // if user wants to print the partitions , sequences from previous variable appended to
                                                                //this and returned
     private  int calls;
 
