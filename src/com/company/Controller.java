@@ -12,38 +12,38 @@ public class Controller {
     {
         Scanner scanner = new Scanner(System.in);
 
-        while (true)
-        {
+        do {
             System.out.println("\nEnter Target\n");
             int target = scanner.nextInt();
 
-              double start_time = new Date().getTime();
+            double start_time = new Date().getTime();
 
             Generator generator = new Generator();
             generator.compute(target);
 
             System.out.println("Total partition of the integer " + target + " is " + generator.getPartitionCount());
 
-            System.out.println("Time taken for input "+target+" is " +(new Date().getTime()-start_time)/1000+" seconds");
+            System.out.println("Time taken for input " + target + " is " + (new Date().getTime() - start_time) / 1000 + " seconds");
 
             System.out.println("Press 1 to display the partitions ");
 
-            if (scanner.nextInt() == 1)
-            {
+            if (scanner.nextInt() == 1) {
+
+                System.out.println("\nPlease Wait....");
+
+                List<String> list = generator.getPartitions();
                 System.out.println("\nThe partitions are");
-                List<String> list=generator.getPartitions();
-                for (String s:list)
+
+                for (String s : list)
                     System.out.println(s);
 
             }
 
 
             System.out.println("Press 1 to compute for another Integer");
-            if(scanner.nextInt()!=1)
-                break;
 
 
-        }
+        } while (scanner.nextInt() == 1);
     }
 
 }

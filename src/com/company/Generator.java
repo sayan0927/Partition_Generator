@@ -25,7 +25,7 @@ public class Generator {
     void compute(int target)
     {
         compute(target,0,1);   //initially adding will start from 1
-        stringifyPartitions();
+
     }
 
     private void compute(int target, int curr_sum,int level)
@@ -52,6 +52,9 @@ public class Generator {
             sequence.remove(sequence.size()-1);
         }
 
+
+
+
     }
 
     private void stringifyPartitions()
@@ -77,6 +80,7 @@ public class Generator {
 
     List<String> getPartitions()
     {
+        stringifyPartitions();
         return partitions;
     }
 
