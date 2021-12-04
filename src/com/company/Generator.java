@@ -17,15 +17,15 @@ public class Generator {
     {
 
         calls=0;
-        sequence=new LinkedList<>();
+        sequence=new ArrayList<>();
         sequences_present=new HashSet<>();
-        partitions=new LinkedList<>();
+        partitions=new ArrayList<>();
     }
 
     void compute(int target)
     {
         compute(target,0,1);   //initially adding will start from 1
-        stringifyPartitions();
+
     }
 
     private void compute(int target, int curr_sum,int level)
@@ -35,7 +35,7 @@ public class Generator {
             return;
         if(curr_sum==target)
         {
-            List<Integer> temp=new LinkedList<>(sequence);
+            List<Integer> temp=new ArrayList<>(sequence);
             Collections.sort(temp);
           
             sequences_present.add(temp);
@@ -51,6 +51,9 @@ public class Generator {
             compute(target,curr_sum+i,i);
             sequence.remove(sequence.size()-1);
         }
+
+
+
 
     }
 
@@ -77,6 +80,7 @@ public class Generator {
 
     List<String> getPartitions()
     {
+        stringifyPartitions();
         return partitions;
     }
 
